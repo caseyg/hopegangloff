@@ -4,3 +4,4 @@
 /thumbs/*
 /node_modules
 /vendor
+site/config/config.php
