@@ -5,7 +5,7 @@
     <div class="swiper-container gallery-top">
       <div class="swiper-wrapper">
         <?php $index = 0; ?>
-        <?php foreach($page->images() as $image): $index++; ?>
+        <?php foreach($page->images()->flip() as $image): $index++; ?>
           <div class="swiper-slide swiper-lazy" data-hash="slide<?php echo $index ?>" data-background="<?php echo $image->resize(2000, 2000)->url() ?>" width="<?php echo $image->resize(2000, 2000)->width() ?>" height="<?php echo $image->resize(2000, 2000)->height() ?>">
           </div>
         <?php endforeach ?>
@@ -18,7 +18,7 @@
     <div class="swiper-container gallery-thumbs">
       <div class="swiper-wrapper">
         <?php $index = 0; ?>
-        <?php foreach($page->images()->sortBy('sort', 'asc') as $image): $index++; ?>
+        <?php foreach($page->images()->flip() as $image): $index++; ?>
           <div class="swiper-slide" data-hash="slide<?php echo $index ?>" style="background-image:url(<?php echo $image->crop(100,100)->url() ?>)"></div>
         <?php endforeach ?>
       </div>
